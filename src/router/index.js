@@ -6,6 +6,12 @@ const routes = [
         name: "contactbook",
         component: ContactBook,
     },
+
+    {
+        path : "/:pathMath(.*)*",
+        name : "notfound",
+        component: () => import("@/view/NotFound.vue"),
+    },
 ];
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
