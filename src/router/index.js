@@ -6,20 +6,22 @@ const routes = [
         name: "contactbook",
         component: ContactBook,
     },
-
     {
-        path : "/:pathMath(.*)*",
-        name : "notfound",
-        component: () => import("@/view/NotFound.vue"),
+        path: "/:pathMatch(.*)*",
+        name: "notfound",
+        component: () => import("@/views/NotFound.vue"),
     },
-    
     {
         path: "/contacts/:id",
         name: "contact.edit",
         component: () => import("@/views/ContactEdit.vue"),
         props: true
     },
-
+    {
+        path: "/contacts",
+        name: "contact.add",
+        component: () => import("@/views/ContactAdd.vue"),
+    },
 ];
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
